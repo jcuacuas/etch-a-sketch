@@ -1,0 +1,42 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+:root {
+    --clr-dark: black;
+    --clr-light: #E3C0D3;
+}
+
+.screen {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+}
+
+.container {
+    background: var(--clr-light);
+    height: 900px;
+    width: 900px;
+    display: flex;
+    flex-direction: column;
+}
+
+button {
+    padding: 10px;
+    border: 2px grey solid;
+    border-radius: 5px;
+}
+
+.row, .pixels {
+    display: flex;
+    flex-grow: 1;
+}
+
+.filled-pixels {
+    background: var(--clr-dark);
+}
