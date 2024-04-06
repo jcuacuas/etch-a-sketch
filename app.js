@@ -4,14 +4,13 @@ const rainbowBtn = document.querySelector("#rainbow-button");
 const resetBtn = document.querySelector("#reset-button");
 let rainbow = false;
 let pixelQty = "16";
+let hue = "0";
 
-function getRandomColor() {
-    let hex = "0123456789ABCDEF";
-    let color = "#";
-    for (let i = 0; i < 6; i++) {
-        color += hex[Math.floor(Math.random() * 16)];
-    }
-    return color;
+
+function getRainbowColor() {
+    hue = parseInt(hue) + 5;
+    if (hue === 360) {hue = 0;}
+    return hue + " 100 50";
 }
 
 function fillPixel() {
@@ -22,7 +21,7 @@ function fillPixel() {
     currentOpacity += 10;
     this.style.opacity = currentOpacity + "%";
     if (rainbow === true) {
-        this.style.background = getRandomColor();
+        this.style.background = "hsl(" + getRainbowColor()+ ")";
         this.style.opacity = "100%";
     }
 }
