@@ -4,17 +4,27 @@
     <meta charset="UTF-8">
     <title>Etch-a-sketch</title>
     <link rel=stylesheet href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Tilt+Neon&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="screen">
-        <div>
-            <button id="edit-button">Edit Canvas</button>
-            <button id="rainbow-button">Toggle Rainbow Mode</button>
-            <button id="reset-button">Reset Canvas</button>
+        <div style="margin-right: 240px">
+            <p class="tilt-neon">Drawing Size:</p>
+            <label for="canvas-slider"><input type="range" min="0" max="5" value="2" step="1" id="canvas-slider"></label>
         </div>
-        <div class="container"></div>
+        <div class="container">
+            <div class="controls">
+                <button id="pen-button" class="tilt-neon">Pen Mode</button>
+                <button id="pencil-button" class="tilt-neon">Pencil Mode</button>
+                <button id="rainbow-button" class="tilt-neon">Toggle Rainbow Mode</button>
+                <button id="reset-button" class="tilt-neon">Reset Canvas</button>
+                <p class="tilt-neon">Click to start/stop drawing.</p>
+            </div>
+            <div class="canvas"></div>
+        </div>
     </div>
-
 <script src="app.js"></script>
 </body>
 </html>

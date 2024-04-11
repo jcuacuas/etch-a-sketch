@@ -5,8 +5,25 @@
 }
 
 :root {
-    --clr-dark: black;
-    --clr-light: #E3C0D3;
+    --clr-light: #d3d3d3;
+    --clr-dark: #122C34;
+    --clr-main: #6d5dfc;
+    --clr-main2: #9baacf;
+    --clr-main3: #c8d0e7;
+    font-family: sans-serif;
+}
+
+
+.tilt-neon {
+    font-size: 1.2rem;
+    font-family: "Tilt Neon", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    font-variation-settings:
+        "XROT" 0,
+        "YROT" 0;
+    text-align: center;
 }
 
 .screen {
@@ -16,20 +33,29 @@
     flex-direction: column;
     height: 100vh;
     width: 100vw;
+    gap: 10px;
+    background: rgba(200, 208, 231, 0.2);
 }
 
 .container {
-    background: var(--clr-light);
-    height: 900px;
-    width: 900px;
     display: flex;
-    flex-direction: column;
+    gap: 10px;
+    flex-direction: row-reverse;
 }
 
-button {
-    padding: 10px;
-    border: 2px grey solid;
-    border-radius: 5px;
+.controls {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.canvas {
+    background: white;
+    height: 800px;
+    width: 800px;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid var(--clr-dark);
 }
 
 .row, .pixels {
@@ -39,4 +65,65 @@ button {
 
 .filled-pixels {
     background: var(--clr-dark);
+}
+
+/*  BUTTONS  */
+button {
+    width: 15rem;
+    height: 4rem;
+    border-radius: 1rem;
+    border: 2px solid var(--clr-dark);
+    box-shadow: .3rem .3rem .6rem var(--clr-main3);
+    cursor: pointer;
+    transition: .3s ease;
+    color: var(--clr-main2);
+    background: var(--clr-main3);
+}
+
+button:active {
+    box-shadow: inset .2rem .2rem .5rem var(--clr-main3);
+}
+
+button:hover {
+    color: var(--clr-main);
+}
+
+button.pressed {
+    background: var(--clr-dark);
+}
+
+#canvas-slider {
+    -webkit-appearance: none;
+    width: 350px;
+    background: var(--clr-light);
+    outline: none;
+    opacity: 0.7;
+    -webkit-transition: .2s;
+    transition: opacity .2s;
+    box-shadow: inset .2rem .2rem .5rem var(--clr-main3);
+    border-radius: 1rem;
+}
+
+#canvas-slider:hover {
+    opacity: 1;
+}
+
+#canvas-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 25px;
+    height: 25px;
+    background: var(--clr-main);
+    cursor: pointer;
+    border-radius: 1rem;
+    box-shadow: 1px 1px 1px black;
+    border: 1px solid black;
+}
+
+#canvas-slider::-moz-range-thumb {
+    width: 25px;
+    height: 25px;
+    background: var(--clr-main);
+    cursor: pointer;
+    border-radius: 1rem;
 }
